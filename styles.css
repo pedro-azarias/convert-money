@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #1c1c1c;
+}
+
+.container {
+    width: 375px;
+    background-color: #f4f4f4;
+    margin: 0 auto;
+    margin: 30px auto 30px auto;
+}
+
+header {
+    background-color: #4f4f4f;
+    height: 66px;
+}
+
+h1 {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 18px;
+    color: #F4F4F4;
+    text-align: center;
+    padding: 25px;
+}
+
+main {
+    padding: 24px;
+}
+
+label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #777777;
+}
+
+select {
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    height: 48px;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    padding-left: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    margin-top: 6px;
+    margin-bottom: 24px;
+    color: #555555;
+    font-weight: 700;
+}
+
+input {
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    height: 48px;
+    display: block;
+    width: 100%;
+    outline: none;
+    padding-left: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    font-size: 18px;
+}
+
+button {
+    background-color: #4f4f4f;
+    border-radius: 25px;
+    height: 48px;
+    color: #FFFFFF;
+    width: 100%;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    border: none;
+    margin-top: 24px;
+    margin-bottom: 36px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button:active {
+    opacity: 0.7;
+}
+
+section {
+    border: 1px solid #4f4f4f;
+    border-radius: 4px;
+}
+
+.currency-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.currency-name {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #777777;
+}
+
+.currency-value {
+    color: #4f4f4f;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.arrow-img {
+    display: block;
+    margin: 15px auto;
+}
