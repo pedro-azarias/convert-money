@@ -5,7 +5,7 @@
 
 
 > Printscreen da página do conversor de dinheiro 
-<img src="./assets/printscreen.png">
+<img src="./assets/mymoneyconverter.png">
 
 
 ### Acessar projeto
