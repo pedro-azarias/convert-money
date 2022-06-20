@@ -22,14 +22,17 @@
         <main>
 
             <label> Converter <b>de</b>
-            <select>
+            <select id="first-currency-select">
                 <option>R$ Real</option>
+                <option>US$ Dólar americano</option>
+                <option>€ Euro</option>
             </select>
             </label>
 
 
             <label> Converter <b>para</b>
-            <select id="currency-select">
+            <select id="second-currency-select">
+                <option>R$ Real</option>
                 <option>US$ Dólar americano</option>
                 <option>€ Euro</option>
             </select>
@@ -43,17 +46,17 @@
 
             <section>
                 <div class="currency-container">
-                    <img src="./assets/brasil 2.png" alt="bandeira-do-brasil-img">
-                    <p class="currency-name">Real</p>
-                    <p class="currency-value" id="real-value">R$10.000</p>
+                    <img src="./assets/brasil 2.png" alt="bandeira-do-brasil-img" id="first-currency-img">
+                    <p id="first-currency-name">Real</p>
+                    <p class="currency-value" id="first-currency-value">R$</p>
                 </div>
 
                 <img class="arrow-img" src="./assets/Vector.png" alt="seta-img">
 
                 <div class="currency-container">
-                    <img src="./assets/estados-unidos (1) 1.png" alt="bandeira-dos-eua-img" id="currency-img">
-                    <p class="currency-name" id="currency-name">Dólar</p>
-                    <p class="currency-value" id="currency-value">US$2.000</p>
+                    <img src="./assets/estados-unidos (1) 1.png" alt="bandeira-dos-eua-img" id="second-currency-img">
+                    <p id="second-currency-name">Dólar</p>
+                    <p class="currency-value" id="second-currency-value">US$</p>
                 </div>
             </section>
         </main>
