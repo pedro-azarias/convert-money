@@ -1,7 +1,6 @@
 const button = document.querySelector('button')
 
-const dolar = 5.15 //Reais
-const euro = 5.42 //Reais
+
 
 const euroComparedToDollar = 1.052 //1 Euro é igual à 1,05 Dólar
 const dollarComparedToEuro = 0.9501 // 1 Dólar é igual à 0,95 Euro
@@ -18,9 +17,11 @@ const secondCurrencyName = document.getElementById('second-currency-name')
 const firstCurrencyValue = document.getElementById('first-currency-value')
 const secondCurrencyValue = document.getElementById('second-currency-value')
 
-const convertValues = () => {
+const convertValues = async() => {
     const input = document.getElementById('input-real').value
-
+    const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json())
+    const dolar = data.USDBRL.high
+    const euro = data.EURBRL.high
     firstCurrencyValue.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 }).format(input)
         // Se o primeiro for dólar e o segundo for real
     if (firstSelect.value === 'US$ Dólar americano' && secondSelect.value === 'R$ Real') {
