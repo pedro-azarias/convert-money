@@ -1,10 +1,5 @@
 const button = document.querySelector('button')
 
-
-
-const euroComparedToDollar = 1.052 //1 Euro é igual à 1,05 Dólar
-const dollarComparedToEuro = 0.9501 // 1 Dólar é igual à 0,95 Euro
-
 const firstSelect = document.getElementById('first-currency-select')
 const secondSelect = document.getElementById('second-currency-select')
 
@@ -17,11 +12,30 @@ const secondCurrencyName = document.getElementById('second-currency-name')
 const firstCurrencyValue = document.getElementById('first-currency-value')
 const secondCurrencyValue = document.getElementById('second-currency-value')
 
+
+
+
+
+
 const convertValues = async() => {
     const input = document.getElementById('input-real').value
     const data = await fetch("https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL").then(response => response.json())
     const dolar = data.USDBRL.high
     const euro = data.EURBRL.high
+
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '07e86bc5ccmsha1be906cab3344cp151275jsn7efcda616baa',
+            'X-RapidAPI-Host': 'currencyscoop.p.rapidapi.com'
+        }
+    };
+
+    const euroData = await fetch('https://currencyscoop.p.rapidapi.com/latest', options)
+        .then(response => response.json())
+
+    const euroValue = euroData.response.rates.EUR
+
     firstCurrencyValue.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 }).format(input)
         // Se o primeiro for dólar e o segundo for real
     if (firstSelect.value === 'US$ Dólar americano' && secondSelect.value === 'R$ Real') {
@@ -43,7 +57,7 @@ const convertValues = async() => {
         firstCurrencyValue.innerHTML = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 }).format(input)
 
         secondCurrencyName.innerHTML = 'Euro'
-        secondCurrencyValue.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2 }).format(input / euroComparedToDollar)
+        secondCurrencyValue.innerHTML = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2 }).format(euroValue * input)
         secondCurrencyImage.src = './assets/euro.png'
     }
 
@@ -68,7 +82,7 @@ const convertValues = async() => {
 
         secondCurrencyName.innerHTML = 'Dólar'
         secondCurrencyImage.src = './assets/estados-unidos (1) 1.png'
-        secondCurrencyValue.innerHTML = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 }).format(input / dollarComparedToEuro)
+        secondCurrencyValue.innerHTML = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 }).format(input / euroValue)
 
     }
 
